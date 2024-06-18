@@ -2,6 +2,8 @@ const express = require("express")
 const router = express.Router();
 const cors = require("cors")
 const nodemailer = require("nodemailer")
+const path = require("path")
+const NODE_ENV = "production"
 
 // server used to send emails
 
@@ -9,6 +11,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use("/" , router);
+
+
+const __dirname1 = path.resolve();
+if (NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname1, "/build")));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname1, "build", "index.html"));
+  });
+} else {
+  app.get("/", (req, res) => {
+    res.send("API is running");
+  });
+}
+
+
 app.listen(5000, ()=> console.log("Server Running"));
 
 const contactEmail = nodemailer.createTransport({

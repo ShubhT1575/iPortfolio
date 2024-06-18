@@ -1,5 +1,6 @@
 {
   "name": "personal-portfolio",
+  "homepage":".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "start:frontend": "react-scripts start",
-    "start:backend": "nodemon server.js",
+    "start:backend": "nodemon backend/server.js",
     "start": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
