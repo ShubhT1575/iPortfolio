@@ -645,3 +645,6 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 .footer-title{
   font-size: 35px;
 }
+.download{
+  bottom: 2px;
+}

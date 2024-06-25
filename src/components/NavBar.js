@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import logo from '../assets/img/logo.svg';
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import { HashLink } from 'react-router-hash-link';
 import {
@@ -32,12 +30,21 @@ export const NavBar = () => {
     setActiveLink(value);
   }
 
+  const fileName = "shubham latest.pdf"
+  const fileUrl = "https://drive.google.com/file/d/1Sj8U260O-VAELmuO4W_Urey0sA8I-WGC/view?usp=drive_link"
+
+  const handleDownload = ()=>{
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.download = fileName;
+    link.click();
+  }
+
   return (
     <Router>
       <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
         <Container>
           <Navbar.Brand href="/">
-            {/* <img src={logo} alt="Logo" /> */}
             <h4 className="title">iPortfolio</h4>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -51,9 +58,15 @@ export const NavBar = () => {
             </Nav>
             <span className="navbar-text">
               <div className="social-icon">
+
+                <a className="x-logo-a download" onClick={handleDownload}><i className="fa-solid fa-download x-logo"></i></a>
+
                 <a href="https://www.linkedin.com/in/shubham-tiwari-01a338308/"><img src={navIcon1} alt="" /></a>
+
                 <a className="x-logo-a" href="https://x.com/tiwari_shubh15"><i className="fa-brands fa-x-twitter x-logo"></i></a>
+
                 <a href="https://www.instagram.com/shubh_tiwari_pandit/"><img src={navIcon3} alt="" /></a>
+
               </div>
               <HashLink to='#connect'>
                 <button className="vvd"><span>Let’s Connect</span></button>
