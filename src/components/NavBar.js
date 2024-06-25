@@ -31,7 +31,7 @@ export const NavBar = () => {
   }
 
   const fileName = "shubham latest.pdf"
-  const fileUrl = "https://drive.google.com/file/d/1Sj8U260O-VAELmuO4W_Urey0sA8I-WGC/view?usp=drive_link"
+  const fileUrl = "https://www.dropbox.com/scl/fi/h2h4mxbeh8zmmc7p355q8/shubham-latest.pdf?rlkey=ncvetlqghcduyzsl60lopidyu&st=u1jp1iek&dl=1"
 
   const handleDownload = ()=>{
     const link = document.createElement('a');
